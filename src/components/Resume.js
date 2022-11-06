@@ -1,9 +1,15 @@
 import React from "react";
 import laptop from "./laptop.jpg";
+import { Helmet } from "react-helmet-async";
 
 const Resume = () => {
   return (
     <div className="resume">
+      <Helmet>
+        <title>Resume</title>
+        <meta name="description" content="view my resume" />
+        <link rel="canonical" href="/resume" />
+      </Helmet>
       <div>
         <div>
           <h1>About Me</h1>
@@ -11,18 +17,22 @@ const Resume = () => {
         </div>
 
         <div className="lorem">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-          doloremque ipsam, in aspernatur consequuntur, eligendi expedita
-          officiis, tenetur vero velit provident illo architecto delectus
-          necessitatibus. Optio quo quam, quos officia natus voluptatibus
-          ratione ex eos laborum accusamus explicabo quibusdam deleniti quas in
-          voluptatum iure magni? Sapiente obcaecati quis assumenda maxime unde.
-          Harum obcaecati molestias expedita asperiores amet voluptates,
-          voluptas temporibus vel repellendus aspernatur velit ea perferendis
-          modi soluta numquam ab esse aperiam dolor provident iusto alias!
-          Consectetur, cum quos quae, aliquam at veniam, vitae tempore culpa
-          voluptatem soluta nam dolorem unde possimus! Minus soluta officia
-          facere corporis voluptas. Eos, suscipit?
+          Experienced and Motivated Customer Service Professional with expertise
+          in operations strategies, expanding new business, and providing
+          unparalleled customer support. Gained comprehensive experience and
+          knowledge in customer relationship management, regulatory compliance,
+          and general operational support. Experienced in managing customer
+          communications and initiatives to realize improved customer service,
+          satisfaction, and retention.
+          <br />
+          <br />
+          <p>
+            Pivoting into Technology and Software development through
+            self-directed training and online classes on responsive web design
+            and JavaScript data structures and algorithms to develop skills in
+            HTML, CSS, JavaScript, React and learning multiple systems and
+            efficient development techniques.
+          </p>
         </div>
       </div>
       <div className="laptop">

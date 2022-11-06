@@ -1,10 +1,16 @@
 import React from "react";
 import avatar from "./avatar.jpeg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div className="home">
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="view my portfolio" />
+        <link rel="canonical" href="/" />
+      </Helmet>
       <div className="description">
         <div className="hello">Hello, I am a frontend developer.</div>
 

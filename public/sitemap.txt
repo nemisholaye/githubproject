@@ -1,0 +1,5 @@
+https://oinyerepo.netlify.app/
+https://oinyerepo.netlify.app/about
+https://oinyerepo.netlify.app/contact
+https://oinyerepo.netlify.app/resume
+https://oinyerepo.netlify.app/myrepo

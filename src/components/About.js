@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
+import { Helmet } from "react-helmet-async";
 
 const override = {
   display: "block",
@@ -8,6 +9,11 @@ const override = {
   borderColor: "black",
 };
 const About = () => {
+  <Helmet>
+    <title>About</title>
+    <meta name="description" content="view my git repo" />
+    <link rel="canonical" href="/about" />
+  </Helmet>;
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
 
