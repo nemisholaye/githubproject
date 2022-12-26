@@ -12,16 +12,16 @@ const Navbar = () => {
     <nav className="navContainer">
       <div className="name">Onyinye Chukwuma</div>
       <div className="navLink">
-        <NavLink to={"/"} style={navLinkStyles}>
+        <NavLink to="/home" style={navLinkStyles}>
           Home
         </NavLink>
-        <NavLink to={"/about"} style={navLinkStyles}>
+        <NavLink to="/git-repo" style={navLinkStyles}>
+          GitRepo
+        </NavLink>
+        <NavLink to="/about" style={navLinkStyles}>
           About
         </NavLink>
-        <NavLink to={"/resume"} style={navLinkStyles}>
-          Resume
-        </NavLink>
-        <NavLink to={"/contact"} style={navLinkStyles}>
+        <NavLink to="/contact" style={navLinkStyles}>
           Contact
         </NavLink>
       </div>

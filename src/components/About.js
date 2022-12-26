@@ -1,138 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
-import MoonLoader from "react-spinners/MoonLoader";
+import React from "react";
+import laptop from "./laptop.jpg";
 import { Helmet } from "react-helmet-async";
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "black",
-};
 const About = () => {
-  <Helmet>
-    <title>About</title>
-    <meta name="description" content="view my git repo" />
-    <link rel="canonical" href="/about" />
-  </Helmet>;
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const [currentPage, setcurrentPage] = useState(1);
-  const itemsPerPage = 3;
-  const pageNumberLimit = 3;
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(3);
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
-  const handleClick = (event) => {
-    setcurrentPage(Number(event.target.id));
-  };
-
-  const pages = [];
-  for (let i = 1; i <= Math.ceil(repos.length / itemsPerPage); i++) {
-    pages.push(i);
-  }
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = repos.slice(indexOfFirstItem, indexOfLastItem);
-
-  const renderPageNumbers = pages.map((number) => {
-    if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
-      return (
-        <li
-          key={number}
-          id={number}
-          onClick={handleClick}
-          className={currentPage === number ? "active" : null}
-        >
-          {number}
-        </li>
-      );
-    } else {
-      return null;
-    }
-  });
-
-  const handleNextbtn = () => {
-    setcurrentPage(currentPage + 1);
-
-    if (currentPage + 1 > maxPageNumberLimit) {
-      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
-    }
-  };
-
-  const handlePrevbtn = () => {
-    setcurrentPage(currentPage - 1);
-
-    if ((currentPage - 1) % pageNumberLimit === 0) {
-      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-    }
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await fetch("https://api.github.com/users/onyiii/repos");
-      const data = await response.json();
-
-      setRepos(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
-  console.log("repos... ", repos);
-
-  const listRepos = currentItems.map((repo) => {
-    return (
-      <li key={repo.id} className="container">
-        <Link
-          to="myrepo"
-          state={{
-            ...repo,
-          }}
-        >
-          {repo.name}
-        </Link>
-      </li>
-    );
-  });
-
-  if (loading) {
-    return <MoonLoader loading={loading} cssOverride={override} size={150} />;
-  }
-
   return (
     <div className="about">
-      <div className="firstGrid">
-        <ul className="pageNumbers">
-          <li>
-            <button
-              onClick={handlePrevbtn}
-              disabled={currentPage === pages[0] ? true : false}
-              className="prevNext"
-            >
-              Prev
-            </button>
-          </li>
+      <Helmet>
+        <title>About</title>
+        <meta name="description" content="view my resume" />
+        <link rel="canonical" href="/about" />
+      </Helmet>
+      <div>
+        <div>
+          <h1>About Me</h1>
+          <p>Get a closer look at who I am</p>
+        </div>
 
-          {renderPageNumbers}
-          <li>
-            <button
-              onClick={handleNextbtn}
-              disabled={currentPage === pages[pages.length - 1] ? true : false}
-              className="prevNext"
-            >
-              Next
-            </button>
-          </li>
-        </ul>
-
-        <ul className="container">{listRepos}</ul>
+        <div className="lorem">
+          Experienced and Motivated Customer Service Professional with expertise
+          in operations strategies, expanding new business, and providing
+          unparalleled customer support. Gained comprehensive experience and
+          knowledge in customer relationship management, regulatory compliance,
+          and general operational support. Experienced in managing customer
+          communications and initiatives to realize improved customer service,
+          satisfaction, and retention.
+          <br />
+          <br />
+          <p>
+            Pivoting into Technology and Software development through
+            self-directed training and online classes on responsive web design
+            and JavaScript data structures and algorithms to develop skills in
+            HTML, CSS, JavaScript, React and learning multiple systems and
+            efficient development techniques.
+          </p>
+        </div>
       </div>
-      <div className="secondGrid">
-        <Outlet />
+      <div className="laptop">
+        <img src={laptop} alt="laptop" />
       </div>
     </div>
   );

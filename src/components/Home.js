@@ -18,7 +18,7 @@ const Home = () => {
           I craft quality software, <br /> with keen attention to <br />
           details.
         </h3>
-        <Link to={"about"}>
+        <Link to={"git-repo"}>
           <button className="homeButton">
             Click to view my Git Repositories
           </button>
