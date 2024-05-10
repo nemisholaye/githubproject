@@ -1,16 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "./logo resized again.png";
 
 const Navbar = () => {
   const navLinkStyles = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
-      color: isActive ? "#945a2f" : "#fff",
+      color: isActive ? "#FFD700" : "#fff",
     };
   };
   return (
     <nav className="navContainer">
-      <div className="name">Onyinye Chukwuma</div>
+      
+     <img className="logoImg" src={logo} alt="logo..." />
+     
       <div className="navLink">
         <NavLink to="/home" style={navLinkStyles}>
           Home

@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "./avatar.jpeg";
+import profile from "./Photo Resizer profile picture .jpeg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -8,24 +8,25 @@ const Home = () => {
     <div className="home">
       <Helmet>
         <title>Home</title>
-        <meta name="description" content="view my portfolio" />
+        <meta name="description" content="My Portfolio" />
         <link rel="canonical" href="/home" />
       </Helmet>
       <div className="description">
-        <div className="hello">Hello, I am a frontend developer.</div>
-
-        <h3 className="partDescription">
-          I craft quality software, <br /> with keen attention to <br />
-          details.
+        
+          <img className="image" src={profile} alt="profile picture" />
+          
+        <h3>
+          I'm <span>Nemi Sholaye,</span> Frontend Developer 
         </h3>
+        <div className="desc">
+          I specialize in creating engaging user experiences and building
+          responsive web applications that leave a lasting impression
+        </div>
         <Link to={"git-repo"}>
           <button className="homeButton">
-            Click to view my Git Repositories
+           Git Repositories
           </button>
         </Link>
-      </div>
-      <div className="img">
-        <img src={avatar} alt="avatar" />
       </div>
     </div>
   );

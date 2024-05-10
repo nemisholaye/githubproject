@@ -11,7 +11,7 @@ const override = {
 const GitRepo = () => {
   <Helmet>
     <title>GitRepo</title>
-    <meta name="description" content="view my git repo" />
+    <meta name="description" content="my git repo" />
     <link rel="canonical" href="/git-repo" />
   </Helmet>;
   const [repos, setRepos] = useState([]);
@@ -73,7 +73,7 @@ const GitRepo = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const response = await fetch("https://api.github.com/users/onyiii/repos");
+      const response = await fetch("https://api.github.com/users/nemisholaye/repos");
       const data = await response.json();
 
       setRepos(data);
